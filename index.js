@@ -3,15 +3,15 @@ var app = express();
 var db = require('./models');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-// app.use(express.static(__dirname + '/public'));
 
-// app.get('/', function homepage (req, res) {
-// 	res.sendFile(__dirname + '/public/index.html');
-// });
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function homepage (req, res) {
+	res.sendFile(__dirname + '/public/index.html');
+});
 
 
 app.get('/api', function api_index (req, res) {
