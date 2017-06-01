@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var db = require('./models');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
